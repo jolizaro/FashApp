@@ -1,4 +1,4 @@
-const mongoose = require(mongoose)
+const mongoose = require('mongoose')
 const reviewSchema = require("./reviewModel.js")
 const brandSchema = mongoose.Schema({
     name:{
