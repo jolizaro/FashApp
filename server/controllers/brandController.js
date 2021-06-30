@@ -20,7 +20,7 @@ const Brand = require("../models/brandModel.js")
 //@access private
 const addBrand = asyncHandler(async (req, res)=>{
     const {name, image} = req.body 
-    console.log(name,image)
+    
     const brandExist = await Brand.findOne({name})
     if (brandExist){
         res.status(404)

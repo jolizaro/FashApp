@@ -3,7 +3,7 @@ const Brand = require("../models/brandModel.js")
 const User = require("../models/userModel.js")
 
 //@desc add a review to the user & the brand
-//@route /brands/:userid/:brandid
+//@route /reviews/:userid/:brandid
 //access private
 
 const addReview = asyncHandler(async (req, res)=>{
@@ -25,3 +25,4 @@ const addReview = asyncHandler(async (req, res)=>{
     res.status(201).send("Review added!")
 
 })
+module.exports = {addReview}
