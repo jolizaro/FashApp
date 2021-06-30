@@ -20,7 +20,8 @@ const Brand = require("../models/brandModel.js")
 //@access private
 const addBrand = asyncHandler(async (req, res)=>{
     const {name, image} = req.body 
-    const brandExist = await Brand.find({name})
+    console.log(name,image)
+    const brandExist = await Brand.findOne({name})
     if (brandExist){
         res.status(404)
         throw new Error('Brand already exist');
