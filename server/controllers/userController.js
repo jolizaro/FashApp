@@ -35,6 +35,7 @@ const registerUser = asyncHandler(async (req, res)=>{
 //@access public
 const loginUser = asyncHandler(async (req, res)=>{
     const { email, password} = req.body
+    console.log(email, password)
     const user = await User.findOne({email})
     if (!user){
         res.status(400)

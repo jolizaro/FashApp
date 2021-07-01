@@ -2,6 +2,7 @@ const express = require("express");
 const colors = require("colors");
 const connectDB = require("./config/connect.js")
 const dotenv = require("dotenv")
+const cors = require('cors');
 
 const routes = require("./routes");
 const app = express();
@@ -13,6 +14,7 @@ dotenv.config()
 connectDB()
 
 // Define middleware here
+app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 // Serve up static assets (usually on heroku)

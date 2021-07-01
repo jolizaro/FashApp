@@ -6,7 +6,9 @@
   "scripts": {
     "server": "nodemon server/server.js --watch",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "seed": "node server/seed",
+    "destroy": "node server/seed -d"
   },
   "repository": {
     "type": "git",

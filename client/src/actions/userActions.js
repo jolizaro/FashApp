@@ -10,20 +10,16 @@ export const login = (email, password) => async (dispatch) => {
               'Content-Type': 'application/json'
           }
       }
-      const { data } = await axios.post(
-          '/users', 
-          { email, password }, 
-          config
-      )
+      const { data } = await axios.post('http://localhost:3001/users/login', { email, password }, config)
       dispatch({
-          type: USER_LOGIN_SUCCESS,
+          type: 'USER_LOGIN_SUCCESS',
           payload: data
       })
 
       localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (error) {
       dispatch({
-          type: USER_LOGIN_FAIL,
+          type: 'USER_LOGIN_FAIL',
           payload: error.response && error.response.data.message
           ? error.response.data.message
           : error.message
@@ -33,16 +29,13 @@ export const login = (email, password) => async (dispatch) => {
 
 export const logout = () => (dispatch) => {
   localStorage.removeItem('userInfo')
-  dispatch({ type: USER_LOGOUT })
-  dispatch({ type: USER_DETAILS_RESET })
-  dispatch({ type: ORDER_MY_LIST_RESET })
-  dispatch({ type: USER_LIST_RESET })
+  dispatch({ type: 'USER_LOGOUT' })
 }
 
 export const register = (name, email, password) => async (dispatch) => {
   try {
       dispatch({
-          type: USER_REGISTER_REQUEST
+          type: 'USER_REGISTER_REQUEST'
       })
       const config = {
           headers: {
@@ -50,24 +43,24 @@ export const register = (name, email, password) => async (dispatch) => {
           }
       }
       const { data } = await axios.post(
-          'https://ryantkelseydesign.herokuapp.com/api/users', 
+          'http://localhost:3001/users', 
           { name, email, password }, 
           config
       )
       dispatch({
-          type: USER_REGISTER_SUCCESS,
+          type: 'USER_REGISTER_SUCCESS',
           payload: data
       })
 
       dispatch({
-          type: USER_LOGIN_SUCCESS,
+          type: 'USER_LOGIN_SUCCESS',
           payload: data
       })
 
       localStorage.setItem('userInfo', JSON.stringify(data));
   } catch (error) {
       dispatch({
-          type: USER_REGISTER_FAIL,
+          type: 'USER_REGISTER_FAIL',
           payload: error.response && error.response.data.message
           ? error.response.data.message
           : error.message
