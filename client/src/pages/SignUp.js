@@ -25,7 +25,7 @@ const SignUp = ({ history }) => {
 
     }
     return (
-        <div>
+        <div className="form-container">
             <Form onSubmit={handleSubmit}>
                 <Form.Group controlId="name">
                     <Form.Label>Name</Form.Label>

@@ -16,14 +16,14 @@ const LogIn = ({ history }) => {
         if (userInfo) {
             history.push('/dashboard');
         }
-    }, [dispatch])
+    }, [dispatch, userInfo, history])
     const handleSubmit =(e)=>{
         e.preventDefault();
         dispatch(login(email, password))  
 
     }
     return (
-        <div>
+        <div className="form-container">
             <Form onSubmit={handleSubmit}>
                 {loading && <p>Logging you in...</p>}
                 {error && <p>Invalid email or password</p>}

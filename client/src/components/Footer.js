@@ -2,9 +2,9 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>
-      
-    </div>
+    <footer>
+      <h3>&copy; FASHAPP 2021</h3>
+    </footer>
   )
 }
 

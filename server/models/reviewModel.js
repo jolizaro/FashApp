@@ -16,6 +16,10 @@ const reviewSchema = mongoose.Schema({
     image:{
         type: String,
         required: false
+    },
+    userName: {
+        type: String,
+        required: true
     }
 },{
     timestamps: true

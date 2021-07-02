@@ -7,7 +7,7 @@ const BrandCard = ({ brand }) => {
     <div>
       {brand && (
         <>
-          <Card style={{ width: '18rem' }}>
+          <Card style={{ width: '20rem', margin: '10px' }}>
             <Card.Img variant="top" src={brand.image} />
             <Card.Body>
               <Card.Title>{brand.name}</Card.Title>
