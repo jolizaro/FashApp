@@ -11,6 +11,9 @@ import {
   brandDeleteReducer,
   brandDetailsReducer 
 } from './reducers/brandReducer';
+import {
+  reviewCreateReducer
+} from './reducers/reviewReducer';
 
 const reducer = combineReducers({
   userLogin: userLoginReducer,
@@ -18,7 +21,8 @@ const reducer = combineReducers({
   brandList: brandListReducer,
   brandCreate: brandCreateReducer,
   brandDelete: brandDeleteReducer,
-  brandDetails: brandDetailsReducer
+  brandDetails: brandDetailsReducer,
+  reviewCreate: reviewCreateReducer
 })
 
 const userInfoFromStorage = localStorage.getItem('userInfo') 
