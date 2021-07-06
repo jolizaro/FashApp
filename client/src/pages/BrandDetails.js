@@ -4,23 +4,25 @@ import { useDispatch, useSelector } from 'react-redux';
 import ReviewModal from '../components/ReviewModal';
 import { Link } from 'react-router-dom';
 import Review from '../components/Review';
+import { listBrandDetails } from '../actions/brandActions';
 
 const BrandDetails = ({ match, history }) => {
     const [modalShow, setModalShow] = React.useState(false);
-    const [brand, setBrand] = useState({});
     const dispatch = useDispatch();
     const userLogin = useSelector(state => state.userLogin);
     const { userInfo } = userLogin;
-    const brandList = useSelector(state => state.brandList)
-    const { brands } = brandList;
+    const brandDetails = useSelector(state => state.brandDetails)
+    const { brand } = brandDetails;
+   
 
     useEffect(() => {
         if (!userInfo) {
             history.push('/login');
         }
-        const found = brands.filter(brand => match.params.id == brand._id)[0];
-        setBrand(found);
-    }, [dispatch, userInfo, history, match, brands])
+        // const found = brands.filter(brand => match.params.id == brand._id)[0];
+        dispatch(listBrandDetails(match.params.id))
+        
+    }, [dispatch, userInfo, history, match])
 
     return (
         <div className="details-container">

@@ -12,9 +12,10 @@ const Header = () => {
     <Navbar bg="primary" variant="dark" expand="lg">
       <Container>
       <Navbar.Brand href="#home">FashApp</Navbar.Brand>
+      <div>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-      <Form inline>
+      <Form inline style={{display:'flex'}}>
       <FormControl type="text" placeholder="Search" className="mr-sm-2" />
       <Button variant="outline-success">Search</Button>
     </Form>
@@ -22,15 +23,17 @@ const Header = () => {
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>
           </LinkContainer>
-          <LinkContainer to="/dashboard">
+          {userInfo && <LinkContainer to="/dashboard">
             <Nav.Link>Dashboard</Nav.Link>
-          </LinkContainer>
+          </LinkContainer>}
+          
           <LinkContainer to="/login">
             <Nav.Link>Login</Nav.Link>
           </LinkContainer>
         </Nav>
      
       </Navbar.Collapse>
+      </div>
     </Container>
     </Navbar>
     </header>

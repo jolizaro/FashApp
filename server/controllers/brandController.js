@@ -14,6 +14,19 @@ const Brand = require("../models/brandModel.js")
      }
 
  })
+//@desc get brand by id
+//@route GET /brands/:id
+//@access private
+ const getBrandDetails = asyncHandler(async (req, res)=>{
+     const brand = await Brand.findById(req.params.id)
+     if (brand){
+         res.json(brand)
+     }else{
+         res.status(404)
+         throw new Error('Brand does not exist');
+     }
+
+ })
 
  //@desc add brand
 //@route POST /brands
@@ -31,4 +44,4 @@ const addBrand = asyncHandler(async (req, res)=>{
     res.status(201).json(brand)
 
 })
-module.exports = {getBrands, addBrand}
+module.exports = {getBrands, addBrand, getBrandDetails}

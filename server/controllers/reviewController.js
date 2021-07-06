@@ -7,7 +7,8 @@ const User = require("../models/userModel.js")
 //access private
 
 const addReview = asyncHandler(async (req, res)=>{
-    const {description, title, image, rating, userName} = req.body 
+    console.log(req.body)
+    const {description, title, image, rating, userName, brandName} = req.body 
     const {userid, brandid} = req.params
     const brandExist = await Brand.findById(brandid)
     const userExist = await User.findById(userid)
@@ -16,8 +17,8 @@ const addReview = asyncHandler(async (req, res)=>{
         throw new Error('Brand or user does not exist');
     
     }
-    brandExist.reviews.push({description, title, image: image || "", rating, userName})
-    userExist.reviews.push({description, title, image: image || "", rating, userName})
+    brandExist.reviews.push(req.body)
+    userExist.reviews.push(req.body)
     await brandExist.save()
     await userExist.save()
 

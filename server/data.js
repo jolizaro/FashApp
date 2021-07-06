@@ -8,13 +8,15 @@ const brandsArray = [
               title: "My Review",
               description: "This is cool",
               rating: 5,
-              userName: "user"
+              userName: "user",
+              brandName: 'ASOS'
           },
           {
             title: "My Review",
             description: "This is cool",
             rating: 5,
-            userName: "user"
+            userName: "user",
+            brandName: "ASOS"
         }
       ]
 
@@ -28,13 +30,15 @@ const brandsArray = [
             title: "My Review",
             description: "This is cool",
             rating: 5,
-            userName: "user"
+            userName: "user",
+            brandName: "HM"
         },
         {
           title: "My Review",
           description: "This is cool",
           rating: 5,
-          userName: "user"
+          userName: "user",
+          brandName: "HM"
       }
     ]
 },
@@ -47,13 +51,15 @@ const brandsArray = [
             title: "My Review",
             description: "This is cool",
             rating: 5,
-            userName: "user"
+            userName: "user",
+            brandName: "REVOLVE"
         },
         {
           title: "My Review",
           description: "This is cool",
           rating: 5,
-          userName: "user"
+          userName: "user",
+          brandName: "REVOLVE"
       }
     ]
 },
@@ -66,13 +72,15 @@ const brandsArray = [
             title: "My Review",
             description: "This is cool",
             rating: 5,
-            userName: "user"
+            userName: "user",
+            brandName: "FashionNova"
         },
         {
           title: "My Review",
           description: "This is cool",
           rating: 5,
-          userName: "user"
+          userName: "user",
+          brandName: "FashionNova"
       }
     ]
 },
@@ -85,13 +93,15 @@ const brandsArray = [
             title: "My Review",
             description: "This is cool",
             rating: 5,
-            userName: "user"
+            userName: "user",
+            brandName: 'MISS LOLA'
         },
         {
           title: "My Review",
           description: "This is cool",
           rating: 5,
-          userName: "user"
+          userName: "user",
+          brandName: 'MISS LOLA'
       }
     ]
 },

@@ -20,11 +20,19 @@ export const listBrands = () => async (dispatch) => {
   }
 }
 
-export const listBrandDetails = (id) => async (dispatch) => {
+export const listBrandDetails = (id) => async (dispatch, getState) => {
   try {
     dispatch({ type: 'BRAND_DETAILS_REQUEST' })
 
-    const { data } = await axios.get(`http://localhost:3001/brands/${id}`);
+    const { userLogin: { userInfo } } = getState()
+
+      const config = {
+          headers: {
+              Authorization: `Bearer ${userInfo.token}`
+          }
+      }
+
+    const { data } = await axios.get(`http://localhost:3001/brands/${id}`, config);
 
     dispatch({
       type: 'BRAND_DETAILS_SUCCESS',
