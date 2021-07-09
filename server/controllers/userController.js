@@ -61,5 +61,29 @@ const loginUser = asyncHandler(async (req, res)=>{
     }
 })
 
+//@desc get user details 
+//@route GET //user/:id
+//@access private
+const userDetails = asyncHandler(async (req, res)=>{
+    
+    const user = await User.findById(req.params.id)
+    if (!user){
+        res.status(400)
+        throw new Error("User does not exist")
+    }
+    
+    
+    if (user) {
+        res.status(201).json({
+            _id: user._id,
+            name: user.name,
+            email: user.email,
+            reviews: user.reviews,
+            token: user.token
+        })
+    }
+    
+})
 
-module.exports = {registerUser, loginUser}
+
+module.exports = {registerUser, loginUser, userDetails}

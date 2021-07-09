@@ -1,4 +1,4 @@
-export const reviewCreateReducer = (state = { reviews: [] }, action) => {
+export const reviewCreateReducer = (state = {}, action) => {
   switch (action.type) {
     case 'REVIEW_CREATE_REQUEST':
       return { loading: true }

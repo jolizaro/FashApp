@@ -7,7 +7,7 @@ const reviewSchema = mongoose.Schema({
     },
     brandName: {
         type: String,
-        required: true
+        required: false
     },
     description: {
         type: String,
@@ -23,7 +23,7 @@ const reviewSchema = mongoose.Schema({
     },
     userName: {
         type: String,
-        required: true
+        required: false
     }
 }, {
     timestamps: true

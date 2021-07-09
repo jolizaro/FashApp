@@ -13,7 +13,8 @@ const BrandDetails = ({ match, history }) => {
     const { userInfo } = userLogin;
     const brandDetails = useSelector(state => state.brandDetails)
     const { brand } = brandDetails;
-   
+    const reviewCreate = useSelector(state=> state.reviewCreate)
+    const { loading, success, error } = reviewCreate;
 
     useEffect(() => {
         if (!userInfo) {
@@ -22,7 +23,7 @@ const BrandDetails = ({ match, history }) => {
         // const found = brands.filter(brand => match.params.id == brand._id)[0];
         dispatch(listBrandDetails(match.params.id))
         
-    }, [dispatch, userInfo, history, match])
+    }, [dispatch, userInfo, history, match, success])
 
     return (
         <div className="details-container">
