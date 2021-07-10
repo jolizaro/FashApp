@@ -14,6 +14,10 @@ const brandSchema = mongoose.Schema({
         type: String,
         required: true
     },
+    userId: {
+        type: Number,
+        required: false
+    },
     
     reviews:[reviewSchema]
 },{
