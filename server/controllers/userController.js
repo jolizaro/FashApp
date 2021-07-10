@@ -2,6 +2,7 @@ const asyncHandler = require("express-async-handler")
 const User = require("../models/userModel.js")
 const generateToken = require("../utils/generateToken.js")
 const bcrypt = require('bcrypt')
+const Brand = require("../models/brandModel.js")
 
 //@desc register user 
 //@route POST /users
@@ -71,6 +72,8 @@ const userDetails = asyncHandler(async (req, res)=>{
         res.status(400)
         throw new Error("User does not exist")
     }
+
+    const userBrands = await Brand.find({userId: req.params.id})
     
     
     if (user) {
@@ -79,6 +82,7 @@ const userDetails = asyncHandler(async (req, res)=>{
             name: user.name,
             email: user.email,
             reviews: user.reviews,
+            brands: userBrands,
             token: user.token
         })
     }

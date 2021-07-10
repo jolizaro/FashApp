@@ -32,7 +32,7 @@ const Brand = require("../models/brandModel.js")
 //@route POST /brands
 //@access private
 const addBrand = asyncHandler(async (req, res)=>{
-    const {name, image, description} = req.body 
+    const {name, image, description, userId} = req.body 
     
     const brandExist = await Brand.findOne({name})
     if (brandExist){
@@ -40,7 +40,7 @@ const addBrand = asyncHandler(async (req, res)=>{
         throw new Error('Brand already exist');
     
     }
-    const brand = await Brand.create({name, image, description})
+    const brand = await Brand.create({name, image, description, userId})
     res.status(201).json(brand)
 
 })

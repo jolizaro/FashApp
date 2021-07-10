@@ -11,6 +11,7 @@ import { Container } from 'react-bootstrap';
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { listBrands } from './actions/brandActions';
+import AddBrand from './pages/AddBrand';
 
 
 
@@ -25,11 +26,12 @@ function App() {
     <Router>
       <Header />
       <Container>
-      <div className="App" style={{display: 'flex'}}>
+      <div className="App" style={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
         <Route path="/" exact component={LandingPage} />
         <Route path="/login" component={LogIn} />
         <Route path="/signup" component={SignUp} />
         <Route path="/dashboard" component={Dashboard} />
+        <Route path="/addbrand" component={AddBrand} />
         <Route path="/details/:id" component={BrandDetails} />
       </div>
       </Container>

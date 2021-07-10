@@ -88,7 +88,7 @@ export const createBrand = (brandData) => async (dispatch, getState) => {
               Authorization: `Bearer ${userInfo.token}`
           }
       }
-      const { data } = await axios.post(`http:localhost:3001/brands`, brandData, config)
+      const { data } = await axios.post(`/brands`, brandData, config)
 
       dispatch({ 
         type: 'BRAND_CREATE_SUCCESS',

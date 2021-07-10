@@ -30,7 +30,22 @@ footer{
     text-align: center;      
     display: inline-block;      
     font-size: 16px;      
-    margin: 10px 6px;      
+    margin: 10px 6px;
     
-    
+     
+   
+}
+
+.logout-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+.write-review {
+    cursor: pointer;
+}
+.write-review:hover {
+    color: #4bbf73;
 }

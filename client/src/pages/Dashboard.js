@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Review from '../components/Review';
 import { getUserDetails } from '../actions/userActions';
+import { Link } from 'react-router-dom';
 
 const Dashboard = ({ history }) => {
     const dispatch = useDispatch();
@@ -24,11 +25,13 @@ const Dashboard = ({ history }) => {
             <Row style={{width: '100%'}}>
             {userInfo && (
                 <>
-                <Col md={4}>
-                    <p>Name: {userInfo.name}</p>
-                    <p>Email: {userInfo.email}</p>
+                <Col md={6}>
+                    <h2>My Brands</h2>
+                    <Link to="/addbrand">Add a New Brand!</Link>
                 </Col>
-                {profileDetails && <Col md={8}>{profileDetails.reviews.map(review =>(
+                {profileDetails && <Col md={6}>
+                    <h2>My Reviews</h2>
+                    {profileDetails.reviews.map(review =>(
                     <Review review = {review}/>
                 ))}</Col> }
                 

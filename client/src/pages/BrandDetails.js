@@ -42,7 +42,9 @@ const BrandDetails = ({ match, history }) => {
                                 ))}
                             </>
                         ) : (
-                            <h2>Be the first to <Link to="/review">write a review!</Link></h2>
+                            <h2>
+                                Be the first to <span className="write-review" onClick={() => setModalShow(true)}>write a review</span>
+                            </h2>
                         )
                         }
                     </div>
