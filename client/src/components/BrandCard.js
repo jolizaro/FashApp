@@ -2,7 +2,8 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 
-const BrandCard = ({ brand }) => {
+
+const BrandCard = ({ brand, showDelete, deleteHandler }) => {
   return (
     <div>
       {brand && (
@@ -15,6 +16,13 @@ const BrandCard = ({ brand }) => {
                 {brand.description.split(' ').slice(0, 20).join('')}...
               </Card.Text>
               <Link to={`/details/${brand._id}`}>Read More</Link>
+              {showDelete &&  (
+                <>
+                <i className="far fa-edit" style={{float: 'right', color: 'green'}}></i>
+              <i onClick={(e) => deleteHandler(e, brand._id)} style={{float: 'right', color: 'red'}} className="far fa-trash-alt"></i>
+              </>
+              )}
+             
             </Card.Body>
           </Card>
         </>

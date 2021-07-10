@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Form, Button } from 'react-bootstrap';
 import { createBrand } from '../actions/brandActions';
 
-const AddBrand = () => {
+const AddBrand = ({ history }) => {
   const dispatch = useDispatch();
   const [brandName, setBrandName] = useState('')
   const [description, setDescription] = useState('')
@@ -23,6 +23,7 @@ const AddBrand = () => {
         image,
         userId: userInfo._id
     }))
+    history.push('/dashboard');
   }
 
   const showWidget = (e, widget) => {

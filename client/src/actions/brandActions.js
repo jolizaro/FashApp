@@ -61,7 +61,7 @@ export const deleteBrand = (id) => async (dispatch, getState) => {
               Authorization: `Bearer ${userInfo.token}`
           }
       }
-      await axios.delete(`http://localhost:3001/${id}`, config)
+      await axios.delete(`/brands/${id}`, config)
 
       dispatch({ type: 'BRAND_DELETE_SUCCESS' })
 
