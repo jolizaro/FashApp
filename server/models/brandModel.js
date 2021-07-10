@@ -15,7 +15,7 @@ const brandSchema = mongoose.Schema({
         required: true
     },
     userId: {
-        type: Number,
+        type: String,
         required: false
     },
     

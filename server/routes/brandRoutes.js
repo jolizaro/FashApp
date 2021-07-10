@@ -1,6 +1,6 @@
 const express = require("express")
 const router = express.Router()
-const {getBrands, addBrand, getBrandDetails} = require("../controllers/brandController.js")
+const {getBrands, addBrand, getBrandDetails, deleteBrand, updateBrand} = require("../controllers/brandController.js")
 const {authUser} = require("../middleware/authMiddleware.js")
 
 router.route("/")
@@ -8,5 +8,7 @@ router.route("/")
     .get (getBrands)
 router.route("/:id")
     .get(authUser, getBrandDetails)
+    .delete(authUser, deleteBrand)
+    .put(authUser, updateBrand)
 
-    module.exports = router
+module.exports = router

@@ -3,6 +3,7 @@ const colors = require("colors");
 const connectDB = require("./config/connect.js")
 const dotenv = require("dotenv")
 const cors = require('cors');
+const path = require('path');
 
 const routes = require("./routes");
 const app = express();
