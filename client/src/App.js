@@ -24,7 +24,7 @@ function App() {
       dispatch(listBrands());
   }, [dispatch])
   return (
-    <Router>
+    <Router className="page-container">
       <Header />
       <Container>
       <div className="App" style={{display: 'flex', alignItems:'center', justifyContent:'center'}}>
