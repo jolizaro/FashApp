@@ -2,15 +2,15 @@
   "name": "fashapp",
   "version": "1.0.0",
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "server": "nodemon server/server.js --watch",
+    "server": "nodemon server.js --watch",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "seed": "node server/seed",
-    "destroy": "node server/seed -d",
+    "seed": "node seed",
+    "destroy": "node seed -d",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
-    "start": "node server/server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
