@@ -14,7 +14,7 @@ export const brandListReducer = (state = { brands: [] }, action) => {
   }
 }
 
-export const brandDetailsReducer = (state = { brand: { reviews: [] } }, action) => {
+export const brandDetailsReducer = (state = { }, action) => {
   switch (action.type) {
     case 'BRAND_DETAILS_REQUEST':
       return { loading: true, ...state }
@@ -22,6 +22,23 @@ export const brandDetailsReducer = (state = { brand: { reviews: [] } }, action) 
       return { loading: false, brand: action.payload }
     case 'BRAND_DETAILS_FAIL':
       return { loading: false, error: action.payload }
+    case 'BRAND_DETAILS_RESET':
+      return {...state};
+    default:
+      return state
+  }
+}
+
+export const brandUpdateReducer = (state = { }, action) => {
+  switch (action.type) {
+    case 'BRAND_UPDATE_REQUEST':
+      return { loading: true, ...state }
+    case 'BRAND_UPDATE_SUCCESS':
+      return { loading: false, success: true }
+    case 'BRAND_UPDATE_FAIL':
+      return { loading: false, error: action.payload };
+    case 'BRAND_UPDATE_RESET':
+      return { loading: false, success: false};
     default:
       return state
   }
@@ -49,7 +66,7 @@ export const brandCreateReducer = (state = {}, action) => {
     case 'BRAND_CREATE_FAIL':
       return { loading: false, error: action.payload }
     case 'BRAND_CREATE_RESET':
-      return { brand: {} }
+      return { loading: false, success: false}
     default:
       return state
   }

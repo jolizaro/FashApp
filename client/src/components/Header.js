@@ -23,10 +23,7 @@ const Header = () => {
       <div>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-      <Form inline style={{display:'flex'}}>
-      <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-      <Button variant="outline-success">Search</Button>
-    </Form>
+   
         <Nav className="mr-auto">
           <LinkContainer to="/">
             <Nav.Link>Home</Nav.Link>

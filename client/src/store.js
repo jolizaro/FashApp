@@ -9,7 +9,8 @@ import {
   brandListReducer,
   brandCreateReducer,
   brandDeleteReducer,
-  brandDetailsReducer 
+  brandDetailsReducer,
+  brandUpdateReducer
 } from './reducers/brandReducer';
 import {
   reviewCreateReducer
@@ -23,6 +24,7 @@ const reducer = combineReducers({
   brandCreate: brandCreateReducer,
   brandDelete: brandDeleteReducer,
   brandDetails: brandDetailsReducer,
+  brandUpdate: brandUpdateReducer,
   reviewCreate: reviewCreateReducer
 })
 

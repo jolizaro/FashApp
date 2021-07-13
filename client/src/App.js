@@ -12,6 +12,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { listBrands } from './actions/brandActions';
 import AddBrand from './pages/AddBrand';
+import UpdateBrand from './pages/UpdateBrand';
 
 
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/addbrand" component={AddBrand} />
         <Route path="/details/:id" component={BrandDetails} />
+        <Route path="/update/:id" component={UpdateBrand} />
       </div>
       </Container>
       <Footer />

@@ -104,3 +104,30 @@ export const createBrand = (brandData) => async (dispatch, getState) => {
         })
   }
 }
+
+export const updateBrand = (id, brandData) => async (dispatch, getState) => {
+  try {
+      dispatch({
+          type: 'BRAND_UPDATE_REQUEST'
+      })
+
+      const { userLogin: { userInfo } } = getState()
+
+      const config = {
+          headers: {
+              Authorization: `Bearer ${userInfo.token}`
+          }
+      }
+      await axios.put(`/brands/${id}`, brandData, config)
+
+      dispatch({ type: 'BRAND_UPDATE_SUCCESS' })
+
+  } catch (error) {
+      dispatch({
+          type: 'BRAND_UPDATE_FAIL',
+          payload: error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message
+        })
+  }
+}

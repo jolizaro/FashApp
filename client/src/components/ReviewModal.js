@@ -34,14 +34,15 @@ const ReviewModal = (props) => {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-
+        {props.brand && (
+            <>
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">
                     Write a review for {props.brand.name}
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              {props.brand && (
+              
                 <Form>
                     
 
@@ -75,12 +76,15 @@ const ReviewModal = (props) => {
                 {/* {error && <p>Your review was not submitted</p>} */}
 
             </Form>
-              )}
+           
+              
                 
             </Modal.Body>
+            </>
+            )}
             <Modal.Footer>
-                <Button onClick={(e) => handleSubmit(e, props.brand._id)}>Submit</Button>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button style={{display:'block'}}  className="m-3" onClick={(e) => handleSubmit(e, props.brand._id)}>Submit</Button>
+                <Button style={{display:'block'}} onClick={props.onHide}>Close</Button>
             </Modal.Footer>
         </Modal>
     )

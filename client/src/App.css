@@ -1,3 +1,5 @@
+
+
 footer{
     display:flex;
     justify-content: center;
@@ -8,6 +10,7 @@ footer{
 }
 .fa-user{
     font-size: 48px;
+    
 }
 
 .featured {
@@ -22,6 +25,7 @@ footer{
     align-items: center;
     margin-right: 100px;
     margin-left: 100px;
+    
 }
 .review-button {
     border: none;      

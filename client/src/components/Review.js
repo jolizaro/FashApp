@@ -9,7 +9,7 @@ const Review = ({ review }) => {
         <i className="fas fa-user mb-3"></i>
         <h6>{review.userName}</h6>
       </Col>
-      <Col sm={11}>
+      <Col sm={13}>
         <h3>{review.title}</h3>
         <p style={{fontSize: '18px'}}>{review.description}</p>
         {review.createdAt && <p>{review.createdAt.slice(0,10)}</p>}

@@ -43,22 +43,23 @@ const AddBrand = ({ history }) => {
     }
   )
     return (
-      <div className="form-container">
-      <Form onSubmit={handleSubmit}>
+      <div className="form-container" style={{minHeight: '80vh'}}>
+        <h1>Add a New Brand</h1>
+      <Form onSubmit={handleSubmit} style={{width: '100%'}}>
      
           <Form.Group controlId="formBasicBrandName">
               <Form.Label>Brand Name</Form.Label>
               <Form.Control type="text" placeholder="Enter brand name" value={brandName} onChange={(e) => setBrandName(e.target.value) } />
           </Form.Group>
 
-          <Form.Group controlId="formBasicDescription">
+          <Form.Group controlId="formBasicDescription" className="mb-3">
               <Form.Label>Brand details</Form.Label>
               <Form.Control type="text" placeholder="enter a description of the brand" value={description} onChange={(e) => setDescription(e.target.value)} />
           </Form.Group>
 
-          <Button onClick={(e) => showWidget(e, widget)}>Choose Image</Button>
-          <br/>
-          <Button variant="primary" type="submit">
+          <Button style={{display:'block'}} className="mb-3" onClick={(e) => showWidget(e, widget)}>Choose Image</Button>
+          
+          <Button style={{display:'block'}} variant="primary" type="submit">
               Submit
           </Button>
       </Form>
