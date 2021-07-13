@@ -4,7 +4,7 @@ export const listBrands = () => async (dispatch) => {
   try {
     dispatch({ type: 'BRAND_LIST_REQUEST' })
 
-    const { data } = await axios.get(`http://localhost:3001/brands`);
+    const { data } = await axios.get(`/brands`);
 
     dispatch({
       type: 'BRAND_LIST_SUCCESS',
@@ -32,7 +32,7 @@ export const listBrandDetails = (id) => async (dispatch, getState) => {
           }
       }
 
-    const { data } = await axios.get(`http://localhost:3001/brands/${id}`, config);
+    const { data } = await axios.get(`/brands/${id}`, config);
 
     dispatch({
       type: 'BRAND_DETAILS_SUCCESS',

@@ -15,7 +15,7 @@ export const createReview = (reviewData, brandId) => async (dispatch, getState) 
               Authorization: `Bearer ${userInfo.token}`
           }
       }
-      const { data } = await axios.post(`http://localhost:3001/reviews/${userInfo._id}/${brandId}`, reviewData, config)
+      const { data } = await axios.post(`/reviews/${userInfo._id}/${brandId}`, reviewData, config)
 
       dispatch({ 
         type: 'REVIEW_CREATE_SUCCESS',

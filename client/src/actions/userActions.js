@@ -10,7 +10,7 @@ export const login = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post('http://localhost:3001/users/login', { email, password }, config)
+        const { data } = await axios.post('/users/login', { email, password }, config)
         dispatch({
             type: 'USER_LOGIN_SUCCESS',
             payload: data
@@ -40,7 +40,7 @@ export const getUserDetails = () => async (dispatch, getState) => {
                 Authorization: `Bearer ${userInfo.token}`
             }
         }
-        const { data } = await axios.get(`http://localhost:3001/users/${userInfo._id}`, config)
+        const { data } = await axios.get(`/users/${userInfo._id}`, config)
         dispatch({
             type: 'USER_DETAILS_SUCCESS',
             payload: data
@@ -73,7 +73,7 @@ export const register = (name, email, password) => async (dispatch) => {
             }
         }
         const { data } = await axios.post(
-            'http://localhost:3001/users',
+            '/users',
             { name, email, password },
             config
         )
